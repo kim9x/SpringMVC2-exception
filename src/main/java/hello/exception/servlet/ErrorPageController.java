@@ -25,6 +25,13 @@ public class ErrorPageController {
     public static final String ERROR_STATUS_CODE =
             "javax.servlet.error.status_code";
 
+    @RequestMapping("/error-page/400")
+    public String errorPage400(HttpServletRequest request, HttpServletResponse response) {
+        log.info("errorPage 400");
+        printErrorInfo(request);
+        return "error-page/400";
+    }
+
     @RequestMapping("/error-page/404")
     public String errorPage404(HttpServletRequest request, HttpServletResponse response) {
         log.info("errorPage 404");
